@@ -1,0 +1,20 @@
+def collatz():
+    try:
+        while True:
+            print('Enter number:')  # query
+            number = int(input())  # input
+            while True:
+                if number == 1:  # First check.  Kills loop when value is 1, which means end of collatz.
+                    break
+                elif number % 2 == 0: # Even number check
+                    number = number // 2  # Collatz Function (even)
+                    print(number)
+                    continue
+                elif number % 2 == 1:   # Odd number check
+                    number = 3 * number + 1 # Collatz Function (odd)
+                    print(number)
+                    continue
+    except ValueError:  # in case someone types the number in a string like a weirdo
+        print('Type an integer, not a string.')
+  
+collatz()
